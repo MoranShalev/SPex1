@@ -9,13 +9,12 @@ int isPrime(int num)
     {
         if (num % i != 0)
         {
-            i++;
+            return 1;
         }
 
         else
             return 0;
     }
-    return 1;
 }
 
 int isStrong(int num)
