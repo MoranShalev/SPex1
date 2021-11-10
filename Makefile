@@ -1,8 +1,8 @@
 
 
-all: makemains maindloop maindrec makeloops makeloopd makerecursives makerecursived
+all: mains maindloop maindrec loops loopd recursives recursived
 
-makemains: main.o libclassrec.a
+mains: main.o libclassrec.a
 	gcc -Wall -g -o mains main.o libclassrec.a -lm
 
 maindloop: main.o libclassloops.so
@@ -11,13 +11,13 @@ maindloop: main.o libclassloops.so
 maindrec: main.o libclassrec.so
 	gcc -Wall -g -o maindrec main.o ./libclassrec.so -lm
 
-makeloops: libclassloops.a
+loops: libclassloops.a
 
-makerecursives: libclassrec.a
+recursives: libclassrec.a
 
-makeloopd: libclassloops.so
+loopd: libclassloops.so
 
-makerecursived: libclassrec.so
+recursived: libclassrec.so
 
 libclassloops.a: advancedClassificationLoop.o basicClassification.o
 	 ar -rcs libclassloops.a advancedClassificationLoop.o basicClassification.o 
